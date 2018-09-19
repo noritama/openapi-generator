@@ -1,6 +1,6 @@
 /**
  * OpenAPI Petstore *_/ ' \" =end -- \\r\\n \\n \\r
- * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \" \\  *_/ ' \" =end --       
+ * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \" \\  *_/ ' \" =end --
  *
  * OpenAPI spec version: 1.0.0 *_/ ' \" =end -- \\r\\n \\n \\r
  * Contact: something@something.abc *_/ ' \" =end -- \\r\\n \\n \\r
@@ -432,7 +432,7 @@
       if(contentType != 'multipart/form-data') {
         request.type(contentType);
       }
-    } else if (!request.header['Content-Type']) {
+    } else if (!request.header['Content-Type'] && !!~['POST', 'PUT', 'PATCH'].indexOf(httpMethod.toUpperCase())) {
       request.type('application/json');
     }
 

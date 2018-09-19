@@ -424,7 +424,7 @@
       if(contentType != 'multipart/form-data') {
         request.type(contentType);
       }
-    } else if (!request.header['Content-Type']) {
+    } else if (!request.header['Content-Type'] && !!~['POST', 'PUT', 'PATCH'].indexOf(httpMethod.toUpperCase())) {
       request.type('application/json');
     }
 
