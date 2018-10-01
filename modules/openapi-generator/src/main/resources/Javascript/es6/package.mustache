@@ -3,9 +3,10 @@
   "version": "{{{projectVersion}}}",
   "description": "{{{projectDescription}}}",
   "license": "{{licenseName}}",
-  "main": "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --recursive"
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "build": "npm install . && rollup -c"
   },
   "browser": {
     "fs": false
@@ -21,6 +22,13 @@
     "babel-preset-stage-0": "^6.24.1",
     "expect.js": "~0.3.1",
     "mocha": "~2.3.4",
+    "rollup": "^0.66.2",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-re": "^1.0.7",
     "sinon": "1.17.3"
   }
 }
