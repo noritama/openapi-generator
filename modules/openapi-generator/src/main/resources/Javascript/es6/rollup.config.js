@@ -1,5 +1,4 @@
 import commonjs from 'rollup-plugin-commonjs';
-import globals from 'rollup-plugin-node-globals';
 import json from 'rollup-plugin-json';
 import replace from 'rollup-plugin-re';
 import nodeResolve from 'rollup-plugin-node-resolve';
@@ -22,13 +21,17 @@ export default {
           test: 'if (global.GENTLY) require = GENTLY.hijack(require);',
           // string or function to replaced with
           replace: '',
+        },
+        {
+          match: /ApiClient/,
+          test: 'import superagent from "superagent";',
+          replace: 'import superagent from "superagent/lib/client";',
         }
       ]
     }),
     nodeResolve(),
     commonjs({
       include: 'node_modules/**'
-    }),
-    globals()
+    })
   ]
 };

@@ -3,18 +3,18 @@
   "version": "{{{projectVersion}}}",
   "description": "{{{projectDescription}}}",
   "license": "{{licenseName}}",
-  "main": "index.js",
+  "main": "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --recursive",
     "build": "npm install . && rollup -c"
   },
   "browser": {
+    "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js": "./index.js",
     "fs": false
   },
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
-    "querystring": "^0.2.0",
     "superagent": "3.7.0"
   },
   "devDependencies": {
@@ -26,7 +26,6 @@
     "rollup": "^0.66.2",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-re": "^1.0.7",
     "sinon": "1.17.3"
