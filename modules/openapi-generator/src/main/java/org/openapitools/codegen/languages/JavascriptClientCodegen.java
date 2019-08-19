@@ -56,6 +56,7 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
             new String[]{"git_push.sh.mustache", "git_push.sh"},
             new String[]{"README.mustache", "README.md"},
             new String[]{"mocha.opts", "mocha.opts"},
+            new String[]{"rollup.config.js", "rollup.config.js"},
             new String[]{"travis.yml", ".travis.yml"}
     };
 
@@ -66,6 +67,7 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
             new String[]{"git_push.sh.mustache", "git_push.sh"},
             new String[]{"README.mustache", "README.md"},
             new String[]{"mocha.opts", "mocha.opts"},
+            new String[]{"rollup.config.js", "rollup.config.js"},
             new String[]{"travis.yml", ".travis.yml"},
             new String[]{".babelrc.mustache", ".babelrc"}
     };
